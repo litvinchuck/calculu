@@ -1,21 +1,22 @@
 #include <stdlib.h>
 #include "sll.h"
 
-sllnode* sll_create(int val)
+sll_node* sll_create(int val)
 {
-    sllnode* node = malloc(sizeof(sllnode));
+    sll_node* node = malloc(sizeof(sll_node));
     node->val = val;
     node->next = NULL;
     return node;
 }
 
-sllnode* sll_insert(sllnode* head, int val)
+sll_node* sll_insert(sll_node* head, int val)
 {
-    sllnode* new = sll_create(val);
+    sll_node* new = sll_create(val);
     new->next = head;
+    return new;
 }
 
-int sll_find(sllnode* head, int val)
+int sll_find(sll_node* head, int val)
 {
     if (head == NULL)
     {
@@ -28,7 +29,7 @@ int sll_find(sllnode* head, int val)
     return sll_find(head->next, val);
 }
 
-void sll_destroy(sllnode* head)
+void sll_destroy(sll_node* head)
 {
     if (head == NULL)
     {

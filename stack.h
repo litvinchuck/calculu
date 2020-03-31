@@ -4,7 +4,7 @@
 #include "sll.h"
 
 /* Stack with integer values implementation using linked list */
-typedef sllnode stack_node;
+typedef sll_node stack_node;
 
 /* Create a new stack and store given value (val).
 Returns a pointer to the new stack. */
@@ -16,7 +16,7 @@ int stack_find(stack_node* head, int val);
 
 /* Insert a new node with value (val) into the stack (head).
 Returns the pointer to the new stack head. */
-void stack_push(stack_node* head, int val);
+stack_node* stack_push(stack_node* head, int val);
 
 /* Pop the last node of the stack.
 Returns the value stored in popped node. */

@@ -11,15 +11,15 @@ int stack_find(stack_node* head, int val)
     return sll_find(head, val);
 }
 
-void stack_push(stack_node* head, int val)
+stack_node* stack_push(stack_node* head, int val)
 {
     if (head->next == NULL)
     {
         stack_node* new = stack_create(val);
         head->next = new;
-        return;
+        return head;
     }
-    stack_push(head->next, val);
+    return stack_push(head->next, val);
 }
 
 int stack_pop(stack_node* head)
